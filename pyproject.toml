@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "so101-lab"
+version = "0.1.0"
+description = "SO-101 VLA experiment launchers, trajectory checks and evaluation tools"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3"]
+
+[project.optional-dependencies]
+robot = ["lerobot[core_scripts,training,smolvla,diffusion,feetech]==0.6.1"]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+so101-run = "so101_lab.launch:main"
+so101-data = "so101_lab.data:main"
+so101-report = "so101_lab.report:main"
+so101-augment = "so101_lab.augment:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

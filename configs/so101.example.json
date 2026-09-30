@@ -1,0 +1,42 @@
+{
+  "robot": {
+    "port": "/dev/ttyACM0",
+    "id": "so101_follower",
+    "cameras": {
+      "front": {"type": "opencv", "index_or_path": 0, "width": 640, "height": 480, "fps": 30},
+      "wrist": {"type": "opencv", "index_or_path": 1, "width": 640, "height": 480, "fps": 30}
+    }
+  },
+  "teleop": {"port": "/dev/ttyACM1", "id": "so101_leader"},
+  "dataset": {
+    "repo_id": "local/so101-pick-place",
+    "root": "data/recordings/pick-place",
+    "task": "Pick up the cube and place it in the tray.",
+    "fps": 30,
+    "num_episodes": 10,
+    "episode_time_s": 30,
+    "reset_time_s": 15
+  },
+  "training": {
+    "device": "cuda",
+    "smolvla_base": "lerobot/smolvla_base",
+    "steps": 20000,
+    "batch_size": 8,
+    "seed": 0,
+    "rename_map": {},
+    "init_policies": {"act": null, "diffusion": null},
+    "output_root": "outputs/train/run-001",
+    "episodes": null
+  },
+  "evaluation": {
+    "repo_id": "local/eval-so101-pick-place-run-001",
+    "root": "data/eval/run-001",
+    "policy_path": "outputs/train/run-001/smolvla/checkpoints/last/pretrained_model",
+    "rename_map": {},
+    "task": "Pick up the cube and place it in the tray.",
+    "fps": 30,
+    "num_episodes": 10,
+    "episode_time_s": 30,
+    "reset_time_s": 15
+  }
+}
