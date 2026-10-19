@@ -63,7 +63,7 @@ so101-train-adapter --cache data/cache.npz --split data/split.json \
   --output-dir checkpoints/failure-aware-seed0 --epochs 20 --seed 0
 ```
 
-缓存格式、归一化约定、LeRobot `predict_action_chunk` 包装和调度接线见 [实现与复现](docs/implementation.md)。动作输出残差与在 SmolVLA 隐层注入 token/adapter 是不同实现；当前 Python 调度原型也不是已经验证的 C++/ROS2 控制器。
+缓存格式、归一化约定、LeRobot `predict_action_chunk` 包装和调度接线见 [实现与复现](docs/implementation.md)。另有[动作专家内部历史/失败条件模块](docs/internal-conditioning.md)，通过基座 forward loss 训练，支持独立部署；本次仅在小型合成 flow 模型上验证。新增 C++/ROS2 节点已在 Jazzy 完整编译并用隔离的合成消息联调，未连接硬件，见[接线与验证](docs/live-interfaces.md)。
 
 历史采集数量、任务成功率和延迟应使用真实记录核查，入口与字段见[原始证据核查](docs/evidence-records.md)。该工具不生成实验数据，也不将记录一致性自动判为真机真实性。
 
@@ -126,4 +126,4 @@ so101-augment --input data/episode.npz --train-stats outputs/train-stats.json --
 - [SmolVLA 文档](https://huggingface.co/docs/lerobot/v0.6.1/smolvla)
 - [ACT 项目](https://github.com/tonyzhaozh/act)：双臂 Transfer Cube 是独立仿真基线，不等同于 SO-101 桌面任务。
 
-本仓库不内嵌上游模型实现或复制其他项目的历史结果。SO-101 仿真场景、URDF / MJCF、专家策略与仿真数据到 LeRobot 的转换器尚需根据实际模型接入，见实验方案中的 Sim2Real 部分。
+本仓库不内嵌上游模型实现或复制其他项目的历史结果。已在固定版本官方 Panda / UR5e 模型上运行各32次FK/IK位姿回环，见[跨本体模型验证](docs/model-kinematics.md)。SO-101 仿真场景、专家策略和跨本体任务数据仍需实际实现和评测。

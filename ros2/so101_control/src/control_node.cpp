@@ -21,10 +21,10 @@ class ControlNode : public rclcpp::Node {
   rclcpp::TimerBase::SharedPtr timer_;
  public:
   ControlNode() : Node("so101_state_aligned_control") {
-    names_=declare_parameter<std::vector<std::string>>("joint_names",{});
-    lower_=declare_parameter<std::vector<double>>("lower",{});
-    upper_=declare_parameter<std::vector<double>>("upper",{});
-    speed_=declare_parameter<std::vector<double>>("max_speed",{});
+    names_=declare_parameter<std::vector<std::string>>("joint_names",std::vector<std::string>{});
+    lower_=declare_parameter<std::vector<double>>("lower",std::vector<double>{});
+    upper_=declare_parameter<std::vector<double>>("upper",std::vector<double>{});
+    speed_=declare_parameter<std::vector<double>>("max_speed",std::vector<double>{});
     if (names_.empty() || lower_.size()!=names_.size() || upper_.size()!=names_.size() || speed_.size()!=names_.size())
       throw std::invalid_argument("Declare joint names, limits and max_speed in consistent units");
     auto sorted=names_; std::sort(sorted.begin(), sorted.end());

@@ -10,4 +10,6 @@
 
 学习部分通过 `pip install -e ".[learning]"` 安装；`so101-offline-demo --output-dir outputs/smoke-run` 提供端到端合成数据演示。Python调度器的虚拟时间测试不测量物理延迟，也未验证30Hz硬实时。
 
-尚未验证：实际串口通信、相机采集、GPU 训练、模型收敛、真机执行、Sim2Real 场景接入。仓库没有训练权重或任务成功率结论。硬件 / 模型路径入口通过配置检查和参数核对，不代表已经在机器人上运行。
+追加验证：62项Python测试通过（本机安装torch和MuJoCo）；内部动作时间嵌入条件模块与完整训练器在小型合成flow模型上通过前向/反向/保存测试；完整ROS2 Jazzy节点严格编译并通过合成消息联调；官方Panda与UR5e模型各32次FK/IK回环通过。详见live-interfaces.md、internal-conditioning.md及model-kinematics.md。
+
+尚未验证：实际串口通信、相机采集、GPU训练、真实SmolVLA权重前向或收敛、真机执行、跨本体任务与Sim2Real。已保存的输出适配器权重来自合成缓存训练；没有真机任务成功率结论。硬件 / 模型路径入口通过配置检查和参数核对，不代表已经在机器人上运行。

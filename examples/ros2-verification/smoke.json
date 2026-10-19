@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "source": "synthetic_ros_messages",
+  "real_robot": false,
+  "domain": 198,
+  "rmw": "rmw_cyclonedds_cpp",
+  "commands_received": 76,
+  "max_target": 0.14995408058166504,
+  "checks": [
+    "compiled ROS2 node launched",
+    "typed chunk transported",
+    "bounded targets published",
+    "nonfinite chunk rejected",
+    "stale robot state stops publishing"
+  ]
+}

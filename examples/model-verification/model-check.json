@@ -1,0 +1,470 @@
+{
+  "passed": true,
+  "source": "MuJoCo_model_kinematics",
+  "real_robot": false,
+  "seed": 20261019,
+  "upstream": "https://github.com/google-deepmind/mujoco_menagerie",
+  "expected_upstream_commit": "62ab00f2bc44f6f20c1c9b7a13f3fb1dd41a4e35",
+  "scope": "Local reachable pose roundtrips only; no cross-robot policy or task evaluation",
+  "models": {
+    "panda": {
+      "samples": 32,
+      "checks": [
+        {
+          "position_m": 1.6242512825142601e-06,
+          "rotation_rad": 3.3114411497212107e-06,
+          "gripper": 0.5172458543696985
+        },
+        {
+          "position_m": 2.3153154494506015e-05,
+          "rotation_rad": 1.80798443483025e-05,
+          "gripper": 0.8900308178959301
+        },
+        {
+          "position_m": 8.962494169643665e-07,
+          "rotation_rad": 1.1622951390847854e-06,
+          "gripper": 0.8497920657226982
+        },
+        {
+          "position_m": 1.6331330665946211e-06,
+          "rotation_rad": 1.3827954000205613e-06,
+          "gripper": 0.5890505076104512
+        },
+        {
+          "position_m": 3.5983301917806576e-06,
+          "rotation_rad": 2.3149107309490507e-06,
+          "gripper": 0.40866524267887017
+        },
+        {
+          "position_m": 1.0205652305044734e-06,
+          "rotation_rad": 9.395191197966304e-07,
+          "gripper": 0.49289642367539876
+        },
+        {
+          "position_m": 7.135122197543496e-07,
+          "rotation_rad": 3.7648403012022415e-07,
+          "gripper": 0.3268067071001428
+        },
+        {
+          "position_m": 2.3131303688433123e-06,
+          "rotation_rad": 8.913891351200721e-07,
+          "gripper": 0.302914614520029
+        },
+        {
+          "position_m": 2.2697298666358975e-06,
+          "rotation_rad": 1.7345820585666718e-06,
+          "gripper": 0.8881760125953816
+        },
+        {
+          "position_m": 6.149750389066965e-07,
+          "rotation_rad": 1.0052226979100558e-06,
+          "gripper": 0.14217830285244146
+        },
+        {
+          "position_m": 1.663131253445831e-06,
+          "rotation_rad": 9.880108062814588e-07,
+          "gripper": 0.47352358693527397
+        },
+        {
+          "position_m": 4.96293685512391e-07,
+          "rotation_rad": 4.250432221075559e-07,
+          "gripper": 0.6048265461463838
+        },
+        {
+          "position_m": 1.8647408791461766e-07,
+          "rotation_rad": 2.1954184857910158e-07,
+          "gripper": 0.6824267830454829
+        },
+        {
+          "position_m": 4.2425129209846444e-05,
+          "rotation_rad": 1.925716697228439e-05,
+          "gripper": 0.5143936033882329
+        },
+        {
+          "position_m": 2.6950405844322765e-07,
+          "rotation_rad": 1.1902688968464149e-07,
+          "gripper": 0.18317798654987882
+        },
+        {
+          "position_m": 7.410854556374794e-07,
+          "rotation_rad": 5.376354607380458e-07,
+          "gripper": 0.7189070686911453
+        },
+        {
+          "position_m": 7.81169154771375e-07,
+          "rotation_rad": 1.9965280404769642e-07,
+          "gripper": 0.7240922520537039
+        },
+        {
+          "position_m": 3.4226228190263575e-06,
+          "rotation_rad": 2.6562587675041827e-06,
+          "gripper": 0.33663704590719223
+        },
+        {
+          "position_m": 6.503996099597143e-07,
+          "rotation_rad": 1.0441975784725707e-06,
+          "gripper": 0.8857469227052474
+        },
+        {
+          "position_m": 2.5732102201676493e-07,
+          "rotation_rad": 1.4549814792277334e-07,
+          "gripper": 0.5133882309393856
+        },
+        {
+          "position_m": 4.2554516130316063e-07,
+          "rotation_rad": 5.071863669026861e-07,
+          "gripper": 0.5191472886302344
+        },
+        {
+          "position_m": 1.7740576424268976e-06,
+          "rotation_rad": 2.1089098492778275e-06,
+          "gripper": 0.7848071883972217
+        },
+        {
+          "position_m": 5.583969112046306e-06,
+          "rotation_rad": 2.2881643738364414e-06,
+          "gripper": 0.2453167805586011
+        },
+        {
+          "position_m": 3.232037568845965e-05,
+          "rotation_rad": 1.4486392318171664e-05,
+          "gripper": 0.7962637527283812
+        },
+        {
+          "position_m": 6.669677945950477e-05,
+          "rotation_rad": 5.6170923081446715e-05,
+          "gripper": 0.5029000179723052
+        },
+        {
+          "position_m": 4.407249497744237e-06,
+          "rotation_rad": 1.803765721102877e-06,
+          "gripper": 0.22498997531492437
+        },
+        {
+          "position_m": 1.984869782780623e-06,
+          "rotation_rad": 6.457837364029855e-07,
+          "gripper": 0.44781896214850514
+        },
+        {
+          "position_m": 5.7188160995654043e-08,
+          "rotation_rad": 7.728192360907765e-08,
+          "gripper": 0.7733055633981594
+        },
+        {
+          "position_m": 3.7379566216739977e-07,
+          "rotation_rad": 1.5223580516495184e-06,
+          "gripper": 0.8426139246812868
+        },
+        {
+          "position_m": 7.568639849849661e-07,
+          "rotation_rad": 1.1561283120410062e-06,
+          "gripper": 0.3451690462747946
+        },
+        {
+          "position_m": 4.559340385675546e-06,
+          "rotation_rad": 1.4206739154581762e-06,
+          "gripper": 0.5215240476284347
+        },
+        {
+          "position_m": 1.2849107379177454e-07,
+          "rotation_rad": 1.3510979425689976e-07,
+          "gripper": 0.18067849016578058
+        }
+      ],
+      "asset_sha256": {
+        "franka_emika_panda/assets/finger_0.obj": "07478de3ac3f20a03c6aaae6e1162241cd40c2626f869f8b6300214b84e39993",
+        "franka_emika_panda/assets/finger_1.obj": "723674cdfa74e3c502d83d695e76db713679d0209899e5dfb0cb7fc99ca883c0",
+        "franka_emika_panda/assets/hand.stl": "94493e94f30fe940f2c8ca2f155c3bbe67bbff406d3edf5e261670d2f0f6e2ed",
+        "franka_emika_panda/assets/hand_0.obj": "6108861e452533528ede1f96ac849b2b82464709241de9d060f7811542f22cb5",
+        "franka_emika_panda/assets/hand_1.obj": "20aefc64bec54c4435c488a841836f90c68f8d049c955878734fa8e58cbca303",
+        "franka_emika_panda/assets/hand_2.obj": "0030f19e5401af70f3d3e2d495657122f5ad5b4ed80123fac54eb1de1a57e7aa",
+        "franka_emika_panda/assets/hand_3.obj": "45d8b5e2dd8538ababdf7e595e5b3a3c47c5275da0148281bafcbb33cf0292d8",
+        "franka_emika_panda/assets/hand_4.obj": "04b433d44ab6d0c35022ad20bc101eaa5817cf7eca4cc53995e16fd0f0bc2199",
+        "franka_emika_panda/assets/link0.stl": "dfc6d94330de8ddb005b311bfdba9f3b8e1aa7c256b71592ee7ff32cb9a9a5aa",
+        "franka_emika_panda/assets/link0_0.obj": "b27078c9e1feb6eaea65df4210e63cec26055407f438fb6c651cd2a26ecc944b",
+        "franka_emika_panda/assets/link0_1.obj": "cd41413866654b119cd940bd7e53d6bd1b600bce57cbb2b3a66cf50cf01d5e3e",
+        "franka_emika_panda/assets/link0_10.obj": "7a55588817ce6381a9e7f7dd67a1a6a80f453ebfb9047afed34062dc6ee05b92",
+        "franka_emika_panda/assets/link0_11.obj": "05699cd6c858814fe0509ef723f588e01126128a5809e44f8bea04341e6f7320",
+        "franka_emika_panda/assets/link0_2.obj": "1546699b6ae8ba13bc3a881f455d9b6967b7d66b61a17c91e502067e8dbcb3f0",
+        "franka_emika_panda/assets/link0_3.obj": "a7d5778cf2e5c4b2e6d947a7cafc538d211365469457138f41535ca67531f54d",
+        "franka_emika_panda/assets/link0_4.obj": "a5c22dd5ca62ca2347c9dead46fd0a2083cec1ca6b014d4f45b6a2bf72662c14",
+        "franka_emika_panda/assets/link0_5.obj": "85b08f6c19abf49b894e3e5c9cd646acd29cef723019cbd885f1b397af9243fa",
+        "franka_emika_panda/assets/link0_7.obj": "c4bb67ddf29f5510789e1c9e21b8dc41280ad00858d1a5d13ccba5519ef14aec",
+        "franka_emika_panda/assets/link0_8.obj": "658bd4effeb44b10c62e8f74eb1a71bb5d3d42dc72d7f64215dca4401a834cbc",
+        "franka_emika_panda/assets/link0_9.obj": "546794c9e0fbdfff309ddbe94bbdf92186370935de7cf9ba62c5f0ba4e897500",
+        "franka_emika_panda/assets/link1.obj": "e471edf2075a419213365285144b8759e6b6f7178b1bd556cc0afdc2ebb72153",
+        "franka_emika_panda/assets/link1.stl": "e41a39a94108fcf56aacff603fc91ec80541f4c1af17b51a0de5617f5566e6d2",
+        "franka_emika_panda/assets/link2.obj": "61d778ec01a499a5ab08e3cd81bfa7d05614120474921f4e484aa8eac062b554",
+        "franka_emika_panda/assets/link2.stl": "370f7605a0fae3529db169ded50f52f171024aa792d4d773bc84197301f6a039",
+        "franka_emika_panda/assets/link3.stl": "0a8d638b9349c6c0eefc4e888636ac4838c4b27170f18a51699321118af709c1",
+        "franka_emika_panda/assets/link3_0.obj": "bf3ee138bed84e9df7820ab7346ea2673bef7b081d49393574f778e5b05e668f",
+        "franka_emika_panda/assets/link3_1.obj": "d58142af5e93ed0960f0c170b10b29dc30a8869bccaca7575dbb284bb8c24e64",
+        "franka_emika_panda/assets/link3_2.obj": "06a3150f719582233cfbc1741072597081c701e30defcb62b244fb7c3efb1ee6",
+        "franka_emika_panda/assets/link3_3.obj": "8d2a7b47309d0375d9ffa116a90d9ff92d7cf90c94ce4db3f24f62bb6ef49c76",
+        "franka_emika_panda/assets/link4.stl": "0180ebb5772ec9840cb049750cffb29a9ddc90311752a16ea34757782ef9e48d",
+        "franka_emika_panda/assets/link4_0.obj": "fbddcbda74b9fb5052a0591fcf377cef2acee8fa2ff8638982309284aea34c88",
+        "franka_emika_panda/assets/link4_1.obj": "ed6edd7072e74d6b3b1ba7508256aa01950066d74d945836f20f4afe990a76b3",
+        "franka_emika_panda/assets/link4_2.obj": "1e09136da7bb325651bba4e0951af946eb650233654583c3ec194a63ce30bf97",
+        "franka_emika_panda/assets/link4_3.obj": "ff7084c63cbf3240a382f33dc6f2284a11652e670bc22a07f11448eb56fd0dc3",
+        "franka_emika_panda/assets/link5_0.obj": "4fb4ea24fc8c83e2a0aaa30cf0336b5e66935892e8b10e48b9118fbc38c4f85c",
+        "franka_emika_panda/assets/link5_1.obj": "961b25796b301896979a946c90a301ff3d871e4b005e1d061c3280b929e60f1d",
+        "franka_emika_panda/assets/link5_2.obj": "ed5e8dc11b90a72904d5d5aeedf2c230b2970b9556184799dc9d30b1ef5aa1af",
+        "franka_emika_panda/assets/link5_collision_0.obj": "9f05f0c305b8445ff9857dc7370bc8bcd435ebdbafb090f9d43789b4fd6b3988",
+        "franka_emika_panda/assets/link5_collision_1.obj": "c9b2e0b36a0614126b0067551be4f903c1cf0465d47ad689a392222eaeb1b6cb",
+        "franka_emika_panda/assets/link5_collision_2.obj": "7ff733d0babd8651eda633dfbb3323c2e3b1e536e63f5a6bf664653b4d0b2d19",
+        "franka_emika_panda/assets/link6.stl": "20b768e99a0e0440b5754dcca108016434e57937cc356acd9c352ccd3cb27f77",
+        "franka_emika_panda/assets/link6_0.obj": "902cf514cd7f601de754d60aef8bf03abfb6cc2de2ea87ae21f716a24b0bec93",
+        "franka_emika_panda/assets/link6_1.obj": "57f55c5a1ecd4290de49e629ff65f58247a5adeeefbff167954dbde4daea7045",
+        "franka_emika_panda/assets/link6_10.obj": "a002320736e73707e998d61e9fa8cd85a2f350b06e57a36d72b2f73b5a7026d9",
+        "franka_emika_panda/assets/link6_11.obj": "9ce6c90aa16a0f6a7c93870e0e7768af2d8a16ef46758b4547e855f9f6d9cf3f",
+        "franka_emika_panda/assets/link6_12.obj": "619f03b4c218c2d3c12fa0a69a632038da3ee0a94770c31d2067a86e15565ae2",
+        "franka_emika_panda/assets/link6_13.obj": "23bb4d531b4f0564a49cd639b8421218d4bfdb6fca25f49747d6456cf8efbbb8",
+        "franka_emika_panda/assets/link6_14.obj": "ebdd009a84f1d8a29efa22703811bab0db78a911f978a52708cf948d7c9f8f5b",
+        "franka_emika_panda/assets/link6_15.obj": "b18583b353d7c565d6ce8b972ba76afda8b5849dc79c7489e3ab9870e9b2e452",
+        "franka_emika_panda/assets/link6_16.obj": "94aa55fe21b990c76d294ad48683b96838822808392d82f4cad9ab11d9bc4c6d",
+        "franka_emika_panda/assets/link6_2.obj": "ad4aa11e1b824ddd58b5ebb5bd60d5391fe2f6c566f5e7250e106df1b81e8447",
+        "franka_emika_panda/assets/link6_3.obj": "93d42375fd8b9e307de87fc93985c466d5e7d41fff2ffb3bef8e405fcd845888",
+        "franka_emika_panda/assets/link6_4.obj": "7c5593a873b4faded71ffd218853f0ede03878be3af0cea993d8dc8f79736e4b",
+        "franka_emika_panda/assets/link6_5.obj": "fb8860a3ed1840f563b1ecf06de31daa1941a2cecaad348f893c7c183beb0096",
+        "franka_emika_panda/assets/link6_6.obj": "7842cd39a2ab542e2af46d21b9c2b4a6e13060b716b6c6a3ce9079cce8acd0af",
+        "franka_emika_panda/assets/link6_7.obj": "bb49ae82f8ea91ad854b5409379a5773f7c9b63baf3ceac229a569d7ccd1dba4",
+        "franka_emika_panda/assets/link6_8.obj": "95e21cf52f75de64a112111cc72026a88a2ad28127b0e8249264c13212ad0c21",
+        "franka_emika_panda/assets/link6_9.obj": "a6e914bfbe305dc26995e54043b70a70ef41654903d23efb9eb395da5dbe5540",
+        "franka_emika_panda/assets/link7.stl": "92ac6afcf7574c034d3170d8a68e95ac9048ab9d0dd5bbd8311b86e551b9ab1c",
+        "franka_emika_panda/assets/link7_0.obj": "6c45c2d72bee4b9f76a7cb8ce495095f66837522362381ef7dd8332fd6504d37",
+        "franka_emika_panda/assets/link7_1.obj": "09bac69cc6ebf22cf0b7b41e5d5e5c94be1ab986b59e59dc01fa0891cfa4c70a",
+        "franka_emika_panda/assets/link7_2.obj": "8a49b056e21f69b8e3ef512d4106d9c76e81357473c718bec29bc0e27595a3b8",
+        "franka_emika_panda/assets/link7_3.obj": "ef63541f12b2b440f0ad6b11dc0fbec1447a0da030fad827cb18e8ca8cd2043e",
+        "franka_emika_panda/assets/link7_4.obj": "c7b273306967759cf197247486197ab12ded1b92d13112b185fb25e4202503c5",
+        "franka_emika_panda/assets/link7_5.obj": "83733d3b94caf2a61f752942ca9dc7cf6cf403bb4f4ab953c24157c240dae92c",
+        "franka_emika_panda/assets/link7_6.obj": "6c4f4d7528eb4b5dbd4be1e0c7dbd5b83e44ef14c9991d4e67bd6d8e1e23cf04",
+        "franka_emika_panda/assets/link7_7.obj": "69f1a8efeaf8c4f8ef7c3265981ac5b1d03faa8d9e07c5b22d9628afae16bf41",
+        "franka_emika_panda/CHANGELOG.md": "d992a29b21dced2da82854d207d53bc5c1d860f603ec865d4cc3aac26617a350",
+        "franka_emika_panda/hand.xml": "c9d8bc3ea6bfe6efb4335a24492757b911389fbf20964afd143d261e688c627a",
+        "franka_emika_panda/LICENSE": "6d1d968fb225eca367cb7f0b8831ab012a35d92b547e945e17ef8e7b05c3e5cc",
+        "franka_emika_panda/mjx_hand.xml": "584d5c96e704f94ea64549404248cc81e02b0de2ae48b3dc276201870766e54b",
+        "franka_emika_panda/mjx_panda.xml": "586bd2d765177ee15fc0a607cf11d36c3ae237a368cbbe10169917164df251cb",
+        "franka_emika_panda/mjx_panda_nohand.xml": "b40e6e63504fbebf41540dc8d22a733cd228330c2c5187f0e7db4e12e62769b0",
+        "franka_emika_panda/mjx_scene.xml": "ad8c924a56bb356367f8fcaa35637ecd59375fa8021931123a61276a7e7af228",
+        "franka_emika_panda/mjx_single_cube.xml": "3398533b8a28e89f1e024dd2742283c2993555be04b058850075f5ce3c52094e",
+        "franka_emika_panda/panda.png": "d6ad5fcfc60237f0f006cf22d6e0b70febb559f609d915cd4316e9f1ad383c2d",
+        "franka_emika_panda/panda.xml": "c5a92e6ff47e7282ea303ffe13530ffe150248a22bb4b349a9369881e52facf0",
+        "franka_emika_panda/panda_nohand.xml": "9c00a40fd4d24272517975ec7702a0016708fa080923c86397701d11302addb1",
+        "franka_emika_panda/README.md": "85cdebf8f4dd52e29b77984e934b815b488b24717a350521b44827680dbbf085",
+        "franka_emika_panda/scene.xml": "60658e01f59909eadaffbb4eb98a98715f67f67e9ae49f42ac114567fddaf230"
+      },
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7"
+      ],
+      "end_effector": "hand"
+    },
+    "ur5e": {
+      "samples": 32,
+      "checks": [
+        {
+          "position_m": 4.7423602724332814e-08,
+          "rotation_rad": 1.2382273274373393e-08,
+          "gripper": 0.8084267147137105
+        },
+        {
+          "position_m": 1.9082670650069913e-06,
+          "rotation_rad": 6.271435149673514e-06,
+          "gripper": 0.6748460786391755
+        },
+        {
+          "position_m": 1.1057898235046126e-06,
+          "rotation_rad": 1.333089362749502e-05,
+          "gripper": 0.3207422871567059
+        },
+        {
+          "position_m": 1.7043807051004374e-05,
+          "rotation_rad": 2.5046756735003073e-06,
+          "gripper": 0.18639812100375988
+        },
+        {
+          "position_m": 3.4195551278376654e-06,
+          "rotation_rad": 2.0093566369074837e-07,
+          "gripper": 0.6944744579364366
+        },
+        {
+          "position_m": 2.927121666325948e-07,
+          "rotation_rad": 3.273248010855802e-07,
+          "gripper": 0.23617387240875365
+        },
+        {
+          "position_m": 5.28329324346651e-06,
+          "rotation_rad": 6.3715720112020355e-06,
+          "gripper": 0.8271354593834983
+        },
+        {
+          "position_m": 1.514243763089788e-06,
+          "rotation_rad": 7.619934064215604e-07,
+          "gripper": 0.6020450478749442
+        },
+        {
+          "position_m": 3.6786482332151903e-07,
+          "rotation_rad": 1.0856803424015025e-07,
+          "gripper": 0.8938894319060482
+        },
+        {
+          "position_m": 5.287695098450187e-06,
+          "rotation_rad": 3.1784549040623325e-07,
+          "gripper": 0.3373614768122616
+        },
+        {
+          "position_m": 1.5228044973544864e-05,
+          "rotation_rad": 4.535184698495067e-06,
+          "gripper": 0.1957694847887832
+        },
+        {
+          "position_m": 2.6500068422022893e-06,
+          "rotation_rad": 3.114837543943255e-06,
+          "gripper": 0.5811742177226068
+        },
+        {
+          "position_m": 6.181582223094991e-06,
+          "rotation_rad": 3.9021872641314735e-07,
+          "gripper": 0.600414469618097
+        },
+        {
+          "position_m": 7.703550082912816e-07,
+          "rotation_rad": 4.48403236384281e-07,
+          "gripper": 0.7181626064953054
+        },
+        {
+          "position_m": 1.999927019271648e-07,
+          "rotation_rad": 7.624459012906953e-07,
+          "gripper": 0.8760352536596566
+        },
+        {
+          "position_m": 6.230598767978179e-07,
+          "rotation_rad": 8.952451999481275e-07,
+          "gripper": 0.4557515323617001
+        },
+        {
+          "position_m": 8.468260934352258e-08,
+          "rotation_rad": 2.57171062586001e-08,
+          "gripper": 0.760323261592774
+        },
+        {
+          "position_m": 1.3634901685074761e-06,
+          "rotation_rad": 5.688963680005638e-07,
+          "gripper": 0.5893729777364892
+        },
+        {
+          "position_m": 1.710629524460477e-06,
+          "rotation_rad": 1.6943025869779107e-07,
+          "gripper": 0.1199394241413022
+        },
+        {
+          "position_m": 6.003391685333633e-07,
+          "rotation_rad": 2.0977190872606305e-06,
+          "gripper": 0.6548099742127531
+        },
+        {
+          "position_m": 4.831658830836337e-06,
+          "rotation_rad": 2.4296350454015025e-06,
+          "gripper": 0.8427372634082719
+        },
+        {
+          "position_m": 6.819306811437214e-07,
+          "rotation_rad": 2.133544492150971e-07,
+          "gripper": 0.12340504391398151
+        },
+        {
+          "position_m": 1.0607826902295567e-06,
+          "rotation_rad": 3.498522877030995e-06,
+          "gripper": 0.11047333800043165
+        },
+        {
+          "position_m": 1.646166786017216e-06,
+          "rotation_rad": 2.243205021360145e-07,
+          "gripper": 0.5245075674548645
+        },
+        {
+          "position_m": 1.4042265960251378e-06,
+          "rotation_rad": 6.737799873020157e-07,
+          "gripper": 0.40939807254026694
+        },
+        {
+          "position_m": 7.926050466406628e-07,
+          "rotation_rad": 1.2179779280696197e-07,
+          "gripper": 0.5401692900399828
+        },
+        {
+          "position_m": 2.187026784217101e-07,
+          "rotation_rad": 6.003110405714014e-07,
+          "gripper": 0.2649056988568915
+        },
+        {
+          "position_m": 3.450169192670654e-07,
+          "rotation_rad": 2.555586210050302e-07,
+          "gripper": 0.5227978921159004
+        },
+        {
+          "position_m": 1.4149058535846757e-06,
+          "rotation_rad": 7.056421327012001e-07,
+          "gripper": 0.3539412285592648
+        },
+        {
+          "position_m": 2.5590918561909233e-07,
+          "rotation_rad": 4.3955517501558834e-07,
+          "gripper": 0.2399956769498921
+        },
+        {
+          "position_m": 5.764894260553155e-07,
+          "rotation_rad": 1.3127336969642229e-08,
+          "gripper": 0.2868684429712469
+        },
+        {
+          "position_m": 7.77253049076371e-08,
+          "rotation_rad": 1.0352653929279148e-07,
+          "gripper": 0.2307258467318393
+        }
+      ],
+      "asset_sha256": {
+        "universal_robots_ur5e/assets/base_0.obj": "31813dba1e76f589f60983fdec876baea14a222aab77684c7e264ceb1d90ef58",
+        "universal_robots_ur5e/assets/base_1.obj": "4c35361fc0c0aad973c75542ccededdac559b4bbaf931e99e654fe86de22af67",
+        "universal_robots_ur5e/assets/forearm_0.obj": "088b9fc0f5564883126a854b4236c96429f2ae819307729b2d1550e4dffa530a",
+        "universal_robots_ur5e/assets/forearm_1.obj": "5248ac9e6551e3df5bb4b78b86303cd0361f3c39886a1dfb9dfc8cbd15199acb",
+        "universal_robots_ur5e/assets/forearm_2.obj": "f84f2e0c905130a56923366edeece3d96df6b59ca331dd20dc9263bcca253989",
+        "universal_robots_ur5e/assets/forearm_3.obj": "7c6597ecc0376c0411cc8d4c3b72a5e325a4ea0131b7b5707d82c0247b02b532",
+        "universal_robots_ur5e/assets/shoulder_0.obj": "cce0c714272216f5e33bc5eac5a001a1819a97bb2ff603c0e0f98ed8d71f2d9d",
+        "universal_robots_ur5e/assets/shoulder_1.obj": "346ecbecd286fef5aee63c4a3f144f6c9ef1660d66d9971407bbce809de30a84",
+        "universal_robots_ur5e/assets/shoulder_2.obj": "5112439815f9c0b2c4b58e339079308395e41ee5f1cc4d17fe8958cf0c273391",
+        "universal_robots_ur5e/assets/upperarm_0.obj": "6231d5268a61753f465a497cb8fcb819aa53cc7beb9eb2e12beac621aa1b62c2",
+        "universal_robots_ur5e/assets/upperarm_1.obj": "114169def8024a4c86b6fa7038f6d6d950e98220aa97f1b15653d2e5de6cdb50",
+        "universal_robots_ur5e/assets/upperarm_2.obj": "4bcd073af772f8a346927376f6545228d14a5acd2a0e06e90a293da616c28b1d",
+        "universal_robots_ur5e/assets/upperarm_3.obj": "0b8112783ec5f2c761ee78cf09594a4bc0048221d9c757a58dc553bc5372d7f7",
+        "universal_robots_ur5e/assets/wrist1_0.obj": "f56c21c3efafd47133cba86e4574172a64d2b28b4c3f185c3e6392ba4f82a393",
+        "universal_robots_ur5e/assets/wrist1_1.obj": "ad1f59130d2d5c9880f00ec851856db9414eae61a9bd68dbfec23d63fb7bae00",
+        "universal_robots_ur5e/assets/wrist1_2.obj": "4e08b115d12c2b530352ca764dfb005c013fb6b9339411429d2fba23073eed4c",
+        "universal_robots_ur5e/assets/wrist2_0.obj": "b376b5f1f6b9b87313bf67104d2cd4483f51530484d0471eefad2dde36f3f283",
+        "universal_robots_ur5e/assets/wrist2_1.obj": "0bd06915468ed605e6a511526f380be4f39136babac47eb8545924fa6cb8c136",
+        "universal_robots_ur5e/assets/wrist2_2.obj": "eb55929d30f70b208e56fa350372d8755cc64a52655cba14040e56d6cc274546",
+        "universal_robots_ur5e/assets/wrist3.obj": "8bb480fd0445eb46ef8cc0ec658f0ad9bcc6338620174e2cf58ba0ef8e7c9353",
+        "universal_robots_ur5e/CHANGELOG.md": "cf17f2271b254c27532d68e8d046742b442b761911dab0cf03bedbdcd2221efd",
+        "universal_robots_ur5e/LICENSE": "e1b2c82e52efbf381403b2b9ae4748157d79ba386d512af1994fcf6821991757",
+        "universal_robots_ur5e/README.md": "0fe8e20c1cd8414e66d2616fb339356431666b75cde1d76533dd1e0c48694af0",
+        "universal_robots_ur5e/scene.xml": "b8909cfccf357f8b586ad5a9ceea190c4aeec11ee90e0dd291845976655c8b30",
+        "universal_robots_ur5e/ur5e.png": "90310086f1187fcda94252ff68f8c4f8be97f65bec8f4eea449179b0979da795",
+        "universal_robots_ur5e/ur5e.xml": "b7320db33754bc9183b5b50135b493d5dfb313c96ce9e32bbaea2b94d187f585"
+      },
+      "joint_names": [
+        "shoulder_pan_joint",
+        "shoulder_lift_joint",
+        "elbow_joint",
+        "wrist_1_joint",
+        "wrist_2_joint",
+        "wrist_3_joint"
+      ],
+      "end_effector": "attachment_site"
+    }
+  }
+}

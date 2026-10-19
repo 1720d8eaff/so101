@@ -26,9 +26,13 @@ class SensorSnapshot:
 
 
 class SmolVLAStream:
-    def __init__(self, policy, preprocessor, postprocessor, *, adapter=None, checkpoint="user-supplied"):
+    def __init__(self, policy, preprocessor, postprocessor, *, adapter=None, internal_adapter=None, checkpoint="user-supplied"):
         self.base, self.pre, self.post, self.checkpoint = policy, preprocessor, postprocessor, checkpoint
-        if adapter is not None:
+        if adapter is not None and internal_adapter is not None:raise ValueError("Choose output or internal conditioning explicitly")
+        if internal_adapter is not None:
+            from .internal_conditioning import InternalChunkPolicy
+            self.policy=InternalChunkPolicy(policy,internal_adapter)
+        elif adapter is not None:
             if (getattr(getattr(policy, "config", None), "use_relative_actions", False)
                 or any(type(step).__name__=="RelativeActionsProcessorStep" for step in getattr(preprocessor, "steps", []))):
                 raise ValueError("The existing residual adapter contract requires absolute processed joint targets")
@@ -38,7 +42,7 @@ class SmolVLAStream:
             self.policy = policy
 
     @classmethod
-    def from_pretrained(cls, checkpoint, *, device="cpu", adapter_path=None):
+    def from_pretrained(cls, checkpoint, *, device="cpu", adapter_path=None, internal_adapter_path=None):
         from importlib.metadata import version
         if version("lerobot") != "0.6.1":
             raise RuntimeError("This bridge targets LeRobot 0.6.1")
@@ -53,7 +57,11 @@ class SmolVLAStream:
             adapter, metadata = load_adapter(adapter_path, device)
             if metadata.get("cache_metadata", {}).get("action_space") != "upstream_processed_absolute_joint_targets":
                 raise ValueError("Adapter action-space declaration does not match")
-        return cls(policy, pre, post, adapter=adapter, checkpoint=checkpoint)
+        internal=None
+        if internal_adapter_path is not None:
+            from .internal_conditioning import load
+            internal,_=load(internal_adapter_path,device)
+        return cls(policy, pre, post, adapter=adapter, internal_adapter=internal, checkpoint=checkpoint)
 
     def reset(self):
         self.policy.reset()

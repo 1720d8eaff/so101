@@ -22,3 +22,15 @@ jobs:
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
       - run: so101-offline-demo --output-dir outputs/ci-smoke
+  ros2:
+    runs-on: ubuntu-24.04
+    container: ros:jazzy-ros-base
+    steps:
+      - uses: actions/checkout@v4
+      - run: apt-get update -qq && apt-get install -y -qq build-essential python3-colcon-common-extensions ros-jazzy-trajectory-msgs ros-jazzy-sensor-msgs ros-jazzy-rosidl-default-generators ros-jazzy-rmw-cyclonedds-cpp
+      - shell: bash
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          colcon build --base-paths ros2/so101_control --packages-select so101_control --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
+          source install/setup.bash
+          RMW_IMPLEMENTATION=rmw_cyclonedds_cpp python3 ros2/so101_control/test/ros_smoke.py install/so101_control/lib/so101_control/control_node

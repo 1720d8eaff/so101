@@ -30,6 +30,8 @@ Python和C++调度约定第k个动作在`observation_time + (k+1)*sample_dt`执�
 
 ## C++核心与ROS2
 
+内部动作专家条件模块、真实基座损失训练入口及其验证边界，另见[内部条件实现](internal-conditioning.md)。部署时使用 `internal_adapter_path`，与原 `adapter_path` 输出残差互斥。
+
 `ros2/so101_control/include/so101_control/buffer.hpp`提供有界动作缓冲：乱序、陈旧观测、状态漂移拒绝，按时间丢弃前缀与替换未来动作，执行时再次检查年龄、限位及速度；低水位请求重规划。核心不依赖ROS，可独立编译运行测试：
 
 ```bash
@@ -58,7 +60,12 @@ ros2 run so101_control control_node --ros-args --params-file /path/to/calibrated
 
 Python端`smolvla_live.ros_chunk`可将原`runtime.ActionChunk`转为新消息；观测的单调时间必须由调用方显式转为与JointState一致的ROS时钟。ROS时间回退会丢弃缓冲并重新等待状态。状态过期时停止发新目标并重新建缓冲；下游驱动仍需要独立看门狗，停止发布不等于已实现安全停机。约30Hz仅指配置的定时器目标，没有端到端硬实时或175→58ms实测结论。
 
-本次验证了C++独立核心；完整ROS2节点需要Linux/ROS2实际构建与硬件验收，不声称已在本机运行。新增CI分别验证Python和独立C++核心。
+本次已在WSL Ubuntu 24.04 / ROS2 Jazzy完整构建节点，启用 `-Wall -Wextra -Werror`。使用 `rmw_cyclonedds_cpp` 在隔离domain 198和专用namespace联调：实际传输ActionChunk、接收限速目标、核实非有限输入被拒绝及状态过期停止发布。记录见[ROS2消息测试](../examples/ros2-verification/smoke.json)。Fast DDS在本机未完成节点发现，未将该失败记为通过。新增CI也执行完整构建与消息测试。没有真机驱动或端到端延迟/硬实时验证。
+
+```bash
+RMW_IMPLEMENTATION=rmw_cyclonedds_cpp python3 ros2/so101_control/test/ros_smoke.py \
+  install/so101_control/lib/so101_control/control_node
+```
 
 ## 跨本体MuJoCo后端
 
@@ -73,7 +80,7 @@ target_joints, gripper = adapter.decode(current_joints, unified)
 
 调用方提供真实MJCF/URDF与唯一关节名称，选择末端site或body；后端读取实际运动学和关节限位，运行MuJoCo FK，再使用已有数值IK。当前仅支持明确有限位的单自由度hinge/slide关节。一个后端对象按单线程使用；并行采集为每个worker创建独立实例。
 
-统一EEF动作仍为body-frame米/弧度和绝对夹爪开度。Panda/UR5e/SO-101的模型、末端定义、夹爪标定、任务资产和专家策略需实际提供；该接口不包含8,000条候选/2,500条有效轨迹，不证明31→49%或40条真机示范后43→59%。新增测试使用明确声明的一维滑动关节MJCF，验证实际MuJoCo FK/IK往返；它不是上述三种机器人的模型。
+统一EEF动作仍为body-frame米/弧度和绝对夹爪开度。新增固定官方模型的Panda/UR5e接入和各32次实际MuJoCo FK/IK回环，具体模型版本、末端与误差见[模型验证](model-kinematics.md)。夹爪开度仍是表示字段，没有运行夹爪抓取。SO-101模型、跨本体任务资产和专家策略仍待实现；该接口不包含8,000条候选/2,500条有效任务轨迹，也不证明31→49%或40条真机示范后43→59%。
 
 参考：[LeRobot 0.6.1 SmolVLA](https://github.com/huggingface/lerobot/blob/v0.6.1/src/lerobot/policies/smolvla/modeling_smolvla.py)、[原处理器加载工厂](https://github.com/huggingface/lerobot/blob/v0.6.1/src/lerobot/policies/factory.py)。
 
