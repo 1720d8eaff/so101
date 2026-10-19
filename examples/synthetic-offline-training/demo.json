@@ -1,0 +1,160 @@
+{
+  "scope": "synthetic smoke test; virtual scheduling time; no task success or physical latency measured",
+  "training": {
+    "output_dir": "D:\\CodexData\\Projects\\2026-10-19\\he-c\\work\\integration\\runs\\so101-offline-training\\adapter-run",
+    "train_examples": 48,
+    "validation_examples": 16,
+    "final_validation_action_mse": 0.00015816908853594214,
+    "scope": "synthetic_cpu_demo_not_robot_experiment"
+  },
+  "chunk_acceptance": "accepted",
+  "counters": {
+    "accepted": 1,
+    "discarded_prefix_steps": 2,
+    "expired_at_execution": 0,
+    "execute": 10,
+    "hold": 4
+  },
+  "control_trace": [
+    {
+      "t": 0.1,
+      "action": [
+        0.05,
+        0.05
+      ],
+      "status": "execute",
+      "request_replan": false,
+      "pending": 9
+    },
+    {
+      "t": 0.13333333333333333,
+      "action": [
+        0.1,
+        0.1
+      ],
+      "status": "execute",
+      "request_replan": false,
+      "pending": 8
+    },
+    {
+      "t": 0.16666666666666666,
+      "action": [
+        0.15000000000000002,
+        0.15000000000000002
+      ],
+      "status": "execute",
+      "request_replan": false,
+      "pending": 7
+    },
+    {
+      "t": 0.2,
+      "action": [
+        0.2,
+        0.2
+      ],
+      "status": "execute",
+      "request_replan": false,
+      "pending": 6
+    },
+    {
+      "t": 0.23333333333333334,
+      "action": [
+        0.25,
+        0.25
+      ],
+      "status": "execute",
+      "request_replan": false,
+      "pending": 5
+    },
+    {
+      "t": 0.26666666666666666,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "execute",
+      "request_replan": false,
+      "pending": 4
+    },
+    {
+      "t": 0.3,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "execute",
+      "request_replan": true,
+      "pending": 3
+    },
+    {
+      "t": 0.3333333333333333,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "execute",
+      "request_replan": true,
+      "pending": 2
+    },
+    {
+      "t": 0.36666666666666664,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "execute",
+      "request_replan": true,
+      "pending": 1
+    },
+    {
+      "t": 0.4,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "execute",
+      "request_replan": true,
+      "pending": 0
+    },
+    {
+      "t": 0.43333333333333335,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "hold",
+      "request_replan": true,
+      "pending": 0
+    },
+    {
+      "t": 0.4666666666666667,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "hold",
+      "request_replan": true,
+      "pending": 0
+    },
+    {
+      "t": 0.5,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "hold",
+      "request_replan": true,
+      "pending": 0
+    },
+    {
+      "t": 0.5333333333333333,
+      "action": [
+        0.3,
+        0.3
+      ],
+      "status": "hold",
+      "request_replan": true,
+      "pending": 0
+    }
+  ]
+}

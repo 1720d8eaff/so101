@@ -180,10 +180,11 @@ class AsyncInference:
     ``predict(Observation)`` returns absolute targets [H,A]. History/image
     preprocessing belongs in that callable. No middleware or robot is opened.
     """
-    def __init__(self, predict, buffer, sample_dt, clock=time.monotonic):
+    def __init__(self, predict, buffer, sample_dt, clock=time.monotonic, snapshot_factory=None):
         if not math.isfinite(sample_dt) or sample_dt <= 0:
             raise ValueError("Invalid action sampling period")
         self.predict, self.buffer, self.sample_dt, self.clock = predict, buffer, sample_dt, clock
+        self.snapshot_factory = snapshot_factory or (lambda obs: Observation(obs.timestamp, obs.state))
         self.pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="so101-policy")
         self.future, self.next_id, self.closed, self.last_error = None, 0, False, None
 
@@ -203,7 +204,7 @@ class AsyncInference:
         step = self.buffer.tick(now, observation.timestamp)
         if (step.request_replan and self.future is None
             and 0 <= now - observation.timestamp <= self.buffer.settings.max_observation_age_s):
-            request_id, snapshot = self.next_id, Observation(observation.timestamp, observation.state)
+            request_id, snapshot = self.next_id, self.snapshot_factory(observation)
             self.next_id += 1
             def infer():
                 actions = self.predict(snapshot)

@@ -10,6 +10,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
+      - run: g++ -std=c++17 -Wall -Wextra -Werror -I ros2/so101_control/include ros2/so101_control/test/buffer_test.cpp -o /tmp/buffer-test && /tmp/buffer-test
   learning:
     runs-on: ubuntu-latest
     steps:

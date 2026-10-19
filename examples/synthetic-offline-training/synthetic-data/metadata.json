@@ -1,0 +1,11 @@
+{
+  "source": "synthetic_cpu_demo_not_robot_experiment",
+  "base_checkpoint_sha256": "de31955fb606b8ebc571ad093ee1ed42cb18f4019c483ce11661a086689c7fee",
+  "normalization_training_episodes": [
+    "ep-0",
+    "ep-1",
+    "ep-2"
+  ],
+  "action_space": "upstream_processed_absolute_joint_targets",
+  "preprocessing": "Synthetic identity preprocessing; not a pretrained SmolVLA cache."
+}

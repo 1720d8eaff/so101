@@ -1,0 +1,40 @@
+{
+  "cache_sha256": "4f37c50289d0c21adc5a1ea89cd7f470c70ce9817af4a5c5c43cadb79705eafd",
+  "split_sha256": "c89cdc3c48a47060a626e541b1e149d8a9abe2d28e836be7e09e6ae8a042c069",
+  "metadata_sha256": "d4180c78681d91f120ab96b972640adacf1f66a1dec3885c68533f6a78e1004e",
+  "seed": 0,
+  "train_episodes": [
+    "ep-0",
+    "ep-1",
+    "ep-2"
+  ],
+  "validation_episodes": [
+    "ep-3"
+  ],
+  "train_examples": 48,
+  "validation_examples": 16,
+  "cache_metadata": {
+    "source": "synthetic_cpu_demo_not_robot_experiment",
+    "base_checkpoint_sha256": "de31955fb606b8ebc571ad093ee1ed42cb18f4019c483ce11661a086689c7fee",
+    "normalization_training_episodes": [
+      "ep-0",
+      "ep-1",
+      "ep-2"
+    ],
+    "action_space": "upstream_processed_absolute_joint_targets",
+    "preprocessing": "Synthetic identity preprocessing; not a pretrained SmolVLA cache."
+  },
+  "torch_version": "2.6.0+cu118",
+  "config": {
+    "state_dim": 3,
+    "action_dim": 2,
+    "history": 4,
+    "horizon": 4,
+    "hidden_dim": 64,
+    "mode": "failure_aware"
+  },
+  "epochs": 20,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "note": "Offline adapter training; cache provenance is declared by its producer, not verified by model inference."
+}
