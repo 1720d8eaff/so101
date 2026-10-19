@@ -1,0 +1,38 @@
+{
+  "source": "synthetic",
+  "synthetic": true,
+  "clock": "virtual_monotonic",
+  "schema_version": 1,
+  "suite": "so101",
+  "seed": 20261019,
+  "disclaimer": "模拟数据：按简历目标构造的日志示例；未执行真机、GR00T/SmolVLA推理或对应训练，不能作为实验成果。",
+  "generator_sha256": "a4d2ac990dda870fc7bad9c4aab8886e53e8ff83059cfa9bfe13fd425acdcc21",
+  "reproduction_command": "python scripts/generate_synthetic_logs.py --suite so101 --seed 20261019 --output-dir NEW_DIRECTORY",
+  "outcome_selection": "Rank correlated fictional difficulty scores and select a prescribed number of successes; not inference outputs.",
+  "numeric_scope": "Counts are integers. Fractions and durations derive from records. Selected means and counts are calibrated by construction.",
+  "files": {
+    "policy_trials.jsonl": {
+      "records": 648,
+      "sha256": "cc2636987fd63cb4826d2158b2e319ffc793a1b846ae2abd3fc1c50cc18262f5"
+    },
+    "async_trials.jsonl": {
+      "records": 324,
+      "sha256": "054f8d153dfda2e5bdf3ad44826ed6b7c4e5c894fa808c6255b31da973fbe541"
+    },
+    "replan_events.jsonl": {
+      "records": 432,
+      "sha256": "749f4584dbfb0205988de489c7008a8e03f183ab5c73b3b88c7ea6b9b37205e1"
+    },
+    "training.jsonl": {
+      "records": 450,
+      "sha256": "220eca810af337d5de008c8299afcf8d5b2c9d9f87d989569a5c15f39f2a65a1"
+    },
+    "learning_curve.jsonl": {
+      "records": 30,
+      "sha256": "94cbcfac481d0e6ab80abcc5db90c76b9bb4f03cfe3f6802b3f4712b6018acad"
+    }
+  },
+  "summary_sha256": "a4e41b2658c8f49a699b83768c1a5d5bb56da96717dc3d1f7f1c6ec842884fbc",
+  "source_data_used": [],
+  "historical_evidence": false
+}

@@ -1,0 +1,66 @@
+[SIMULATED / 模拟] 模拟数据：按简历目标构造的日志示例；未执行真机、GR00T/SmolVLA推理或对应训练，不能作为实验成果。
+[SIMULATED / 模拟] file=policy_trials.jsonl records=648
+[SIMULATED / 模拟] {"policy": "original", "trial_id": "syn-fixed-0-000", "success": true, "failure_type": null, "duration_s": 28.7729}
+[SIMULATED / 模拟] {"policy": "history", "trial_id": "syn-fixed-0-000", "success": true, "failure_type": null, "duration_s": 30.606}
+[SIMULATED / 模拟] {"policy": "failure_aware", "trial_id": "syn-fixed-0-000", "success": true, "failure_type": null, "duration_s": 26.0825}
+[SIMULATED / 模拟] {"policy": "original", "trial_id": "syn-fixed-0-001", "success": false, "failure_type": "localization", "duration_s": 28.6255}
+[SIMULATED / 模拟] {"policy": "history", "trial_id": "syn-fixed-0-001", "success": false, "failure_type": "target_change", "duration_s": 36.1177}
+[SIMULATED / 模拟] {"policy": "failure_aware", "trial_id": "syn-fixed-0-001", "success": false, "failure_type": "localization", "duration_s": 29.6893}
+[SIMULATED / 模拟] {"policy": "original", "trial_id": "syn-fixed-0-002", "success": true, "failure_type": null, "duration_s": 26.5463}
+[SIMULATED / 模拟] {"policy": "history", "trial_id": "syn-fixed-0-002", "success": true, "failure_type": null, "duration_s": 32.2686}
+[SIMULATED / 模拟] {"policy": "failure_aware", "trial_id": "syn-fixed-0-002", "success": true, "failure_type": null, "duration_s": 24.7622}
+[SIMULATED / 模拟] {"policy": "original", "trial_id": "syn-fixed-0-003", "success": true, "failure_type": null, "duration_s": 36.9086}
+[SIMULATED / 模拟] {"policy": "history", "trial_id": "syn-fixed-0-003", "success": true, "failure_type": null, "duration_s": 26.2216}
+[SIMULATED / 模拟] {"policy": "failure_aware", "trial_id": "syn-fixed-0-003", "success": true, "failure_type": null, "duration_s": 26.6371}
+[SIMULATED / 模拟] file=async_trials.jsonl records=324
+[SIMULATED / 模拟] {"policy": "sync", "trial_id": "syn-dynamic_target-0-000", "success": true, "failure_type": null, "duration_s": 33.146516}
+[SIMULATED / 模拟] {"policy": "naive_async", "trial_id": "syn-dynamic_target-0-000", "success": true, "failure_type": null, "duration_s": 26.272598}
+[SIMULATED / 模拟] {"policy": "aligned_async", "trial_id": "syn-dynamic_target-0-000", "success": true, "failure_type": null, "duration_s": 20.802579}
+[SIMULATED / 模拟] {"policy": "sync", "trial_id": "syn-dynamic_target-0-001", "success": true, "failure_type": null, "duration_s": 27.47478}
+[SIMULATED / 模拟] {"policy": "naive_async", "trial_id": "syn-dynamic_target-0-001", "success": false, "failure_type": "timeout", "duration_s": 29.449599}
+[SIMULATED / 模拟] {"policy": "aligned_async", "trial_id": "syn-dynamic_target-0-001", "success": true, "failure_type": null, "duration_s": 17.07088}
+[SIMULATED / 模拟] {"policy": "sync", "trial_id": "syn-dynamic_target-0-002", "success": false, "failure_type": "localization", "duration_s": 34.580399}
+[SIMULATED / 模拟] {"policy": "naive_async", "trial_id": "syn-dynamic_target-0-002", "success": false, "failure_type": "grasp", "duration_s": 30.615806}
+[SIMULATED / 模拟] {"policy": "aligned_async", "trial_id": "syn-dynamic_target-0-002", "success": false, "failure_type": "target_change", "duration_s": 32.956854}
+[SIMULATED / 模拟] {"policy": "sync", "trial_id": "syn-dynamic_target-0-003", "success": false, "failure_type": "execution_deviation", "duration_s": 22.823002}
+[SIMULATED / 模拟] {"policy": "naive_async", "trial_id": "syn-dynamic_target-0-003", "success": false, "failure_type": "target_change", "duration_s": 30.99335}
+[SIMULATED / 模拟] {"policy": "aligned_async", "trial_id": "syn-dynamic_target-0-003", "success": false, "failure_type": "localization", "duration_s": 27.912947}
+[SIMULATED / 模拟] file=replan_events.jsonl records=432
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 319.404128, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 304.35407, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 161.116802, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 186.178528, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 199.774053, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 149.318848, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 187.163688, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 162.438806, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 177.299497, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 170.459187, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 103.901005, "disposition": "accepted"}
+[SIMULATED / 模拟] {"mode": "sync", "blocked_ms": 171.662715, "disposition": "accepted"}
+[SIMULATED / 模拟] file=training.jsonl records=450
+[SIMULATED / 模拟] {"policy": "history", "step": 400, "action_loss": 0.2011886, "validation_action_loss": 0.136087}
+[SIMULATED / 模拟] {"policy": "history", "step": 800, "action_loss": 0.1892438, "validation_action_loss": 0.1286516}
+[SIMULATED / 模拟] {"policy": "history", "step": 1200, "action_loss": 0.1774135, "validation_action_loss": 0.1258655}
+[SIMULATED / 模拟] {"policy": "history", "step": 1600, "action_loss": 0.1685971, "validation_action_loss": 0.1181135}
+[SIMULATED / 模拟] {"policy": "history", "step": 2000, "action_loss": 0.1628387, "validation_action_loss": 0.1113421}
+[SIMULATED / 模拟] {"policy": "history", "step": 2400, "action_loss": 0.1482089, "validation_action_loss": 0.1090584}
+[SIMULATED / 模拟] {"policy": "history", "step": 2800, "action_loss": 0.1423534, "validation_action_loss": 0.1049745}
+[SIMULATED / 模拟] {"policy": "history", "step": 3200, "action_loss": 0.1356767, "validation_action_loss": 0.1006689}
+[SIMULATED / 模拟] {"policy": "history", "step": 3600, "action_loss": 0.1281564, "validation_action_loss": 0.1031765}
+[SIMULATED / 模拟] {"policy": "history", "step": 4000, "action_loss": 0.1228243, "validation_action_loss": 0.0958864}
+[SIMULATED / 模拟] {"policy": "history", "step": 4400, "action_loss": 0.1163988, "validation_action_loss": 0.0909621}
+[SIMULATED / 模拟] {"policy": "history", "step": 4800, "action_loss": 0.1074763, "validation_action_loss": 0.0874432}
+[SIMULATED / 模拟] file=learning_curve.jsonl records=30
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}
+[SIMULATED / 模拟] {"policy": "original"}

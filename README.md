@@ -2,7 +2,7 @@
 
 面向 SO-101 桌面操作的实验代码：将语言条件策略、模仿学习对照、操作数据检查和真机评测组织为可配置的运行流程。
 
-本仓库为新建的实验工具实现。当前已提供命令入口与离线数据处理，不包含数据集、权重或历史实验结果；实际训练效果、真机完成率及扰动恢复表现需在具体设备与任务上验证。
+当前包含实验入口、数据处理、因果历史窗口、可训练的历史/失败感知动作输出适配器、异步状态对齐调度原型及统一末端动作接口。仓库不包含历史真机数据、SmolVLA 微调权重或历史成功率的原始记录。新增代码与简历中既往实验的关系见 [研究证据清单](docs/research-evidence.md)。
 
 ## 包含什么
 
@@ -12,6 +12,11 @@
 | `so101-data` | 轨迹检查、失败过滤、按 episode 划分、仅训练集的状态 / 动作统计 |
 | `so101-report` | 按模型、检查点、任务、测试条件与训练种子汇总成功率及失败类型 |
 | `so101-augment` | 基于训练集动作统计生成 clean / noisy / 因果 EMA filtered 三组离线标签 |
+| `so101-train-adapter` | 用冻结策略的缓存动作训练 history / failure-aware 输出残差，按 episode 隔离验证集 |
+| `so101-offline-demo` | CPU 合成数据端到端训练和虚拟时钟调度演示 |
+| `so101-evidence` | 采集episode/frame分开计数、来源隔离、文件散列、配对初态和逐阶段实测延迟核查 |
+| `runtime.py` | 单个在途推理、过期前缀丢弃、状态漂移拒绝、限幅和低水位重规划 |
+| `embodiment.py` | body-frame EEF ΔPose + 绝对夹爪开度，显式 FK、限位和失败返回的数值 IK |
 | `configs/` | 双视角相机、串口、任务、训练与评测的配置示例 |
 | `docs/` | 数据格式、真机流程、对照实验设计和后续展示材料 |
 | `tests/` | 数据泄漏、无效轨迹、命令生成与结果统计的离线测试 |
@@ -33,6 +38,32 @@ python -m unittest discover -s tests -v
 ```
 
 运行入口默认只打印参数列表；加入 `--execute` 才执行采集、训练或真机命令。上述预览不下载模型，不启动训练，也不连接串口。
+
+## 历史、失败建模与异步执行
+
+安装学习扩展后运行完整的离线演示：
+
+```bash
+python -m pip install -e ".[learning]"
+so101-offline-demo --output-dir outputs/offline-smoke
+python -m unittest discover -s tests -v
+```
+
+演示生成明确标记的合成缓存、训练/验证划分、适配器检查点、损失日志和虚拟时钟动作轨迹。它验证代码链路，不测量真机任务成功率或推理延迟。每次运行使用新的输出目录。
+
+在真实冻结策略缓存上训练：
+
+```bash
+so101-train-adapter --cache data/cache.npz --split data/split.json \
+  --metadata data/cache-metadata.json --mode failure_aware \
+  --output-dir checkpoints/failure-aware-seed0 --epochs 20 --seed 0
+```
+
+缓存格式、归一化约定、LeRobot `predict_action_chunk` 包装和调度接线见 [实现与复现](docs/implementation.md)。动作输出残差与在 SmolVLA 隐层注入 token/adapter 是不同实现；当前 Python 调度原型也不是已经验证的 C++/ROS2 控制器。
+
+历史采集数量、任务成功率和延迟应使用真实记录核查，入口与字段见[原始证据核查](docs/evidence-records.md)。该工具不生成实验数据，也不将记录一致性自动判为真机真实性。
+
+日志格式演示见[明确标注的模拟日志](examples/synthetic-resume-logs/README.md)，包含按简历约数构造的任务结果、恢复记录、规划等待和虚构损失曲线。它们不属于历史实验结果；每条记录均标有synthetic，生成配方和统计计算可复现。
 
 ## 采集、训练与真机运行
 

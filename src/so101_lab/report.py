@@ -3,7 +3,9 @@ import argparse
 from collections import Counter, defaultdict
 from .io import read_jsonl, write_json
 
-FAILURES = {"localization", "grasp", "execution_deviation", "early_stop", "timeout", "collision", "other"}
+from .recovery import FAILURE_CLASSES
+
+FAILURES = set(FAILURE_CLASSES[1:])
 
 
 def summarize(rows):
